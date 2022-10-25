@@ -1,0 +1,13 @@
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\obj\Debug\netcoreapp3.1\DataTypesHomework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\obj\Debug\netcoreapp3.1\DataTypesHomework.AssemblyInfoInputs.cache
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\obj\Debug\netcoreapp3.1\DataTypesHomework.AssemblyInfo.cs
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\obj\Debug\netcoreapp3.1\DataTypesHomework.csproj.CoreCompileInputs.cache
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\bin\Debug\netcoreapp3.1\DataTypesHomework.exe
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\bin\Debug\netcoreapp3.1\DataTypesHomework.deps.json
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\bin\Debug\netcoreapp3.1\DataTypesHomework.runtimeconfig.json
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\bin\Debug\netcoreapp3.1\DataTypesHomework.runtimeconfig.dev.json
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\bin\Debug\netcoreapp3.1\DataTypesHomework.dll
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\bin\Debug\netcoreapp3.1\DataTypesHomework.pdb
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\obj\Debug\netcoreapp3.1\DataTypesHomework.dll
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\obj\Debug\netcoreapp3.1\DataTypesHomework.pdb
+C:\Users\jarba\Desktop\Kurs c# basic\Homework1\Homework1\obj\Debug\netcoreapp3.1\DataTypesHomework.genruntimeconfig.cache
