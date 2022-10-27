@@ -5,11 +5,10 @@ namespace Homework1
 {
     class Program
     {
-        static double trapezeArea(float a, float b, float h)
+        static double TrapezeArea(float a, float b, float h)
         {
             return ((a + b) * h) / 2;
         }
-
 
         static void Main(string[] args)
         {
@@ -19,15 +18,15 @@ namespace Homework1
 
             float f = 54.644F;
 
-            double pole = ((a + b) * h) / 2;
-            double poleFromFunc;
-            poleFromFunc = trapezeArea(43F, 77F, 12.6433F);
+            double area = ((a + b) * h) / 2;
+            double areaFromFunc = TrapezeArea(43F, 77F, 12.6433F);
 
-            Console.WriteLine($"{pole} \n {f} \n");
-            Console.WriteLine(poleFromFunc);
-            int statek = (int)Status.New;
-            Status status = Status.InProgress;
-            Console.WriteLine($"{status}\n{(int)status}\n{statek}\n");
+            Console.WriteLine($"{area} \n {f} \n");
+            Console.WriteLine(areaFromFunc);
+
+            int state = (int)Status.New;
+            Status states = Status.InProgress;
+            Console.WriteLine($"{states}\n{(int)states}\n{state}\n");
 
             Trapeze trapeze = new Trapeze(12.0, 48.4866, 4.865165468);
             Trapeze trapeze2 = new Trapeze(48, 665.999449, 59.556);

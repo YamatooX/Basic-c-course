@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Homework___Data_types
 {
-    class Trapeze
+    public class Trapeze
     {
         private double a;
         private double b;
         private double h;
-        public double area;
+        public double area { get; private set; }
 
         public Trapeze(double a, double b, double h)
         {
