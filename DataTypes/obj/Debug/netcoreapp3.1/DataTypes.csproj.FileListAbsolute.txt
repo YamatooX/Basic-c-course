@@ -1,0 +1,14 @@
+D:\KursC#\DataTypes\bin\Debug\netcoreapp3.1\DataTypes.exe
+D:\KursC#\DataTypes\bin\Debug\netcoreapp3.1\DataTypes.deps.json
+D:\KursC#\DataTypes\bin\Debug\netcoreapp3.1\DataTypes.runtimeconfig.json
+D:\KursC#\DataTypes\bin\Debug\netcoreapp3.1\DataTypes.runtimeconfig.dev.json
+D:\KursC#\DataTypes\bin\Debug\netcoreapp3.1\DataTypes.dll
+D:\KursC#\DataTypes\bin\Debug\netcoreapp3.1\DataTypes.pdb
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.csproj.AssemblyReference.cache
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.GeneratedMSBuildEditorConfig.editorconfig
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.AssemblyInfoInputs.cache
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.AssemblyInfo.cs
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.csproj.CoreCompileInputs.cache
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.dll
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.pdb
+D:\KursC#\DataTypes\obj\Debug\netcoreapp3.1\DataTypes.genruntimeconfig.cache
