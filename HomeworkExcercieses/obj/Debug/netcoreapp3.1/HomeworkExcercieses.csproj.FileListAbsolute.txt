@@ -1,0 +1,14 @@
+D:\KursC#\HomeworkExcercieses\bin\Debug\netcoreapp3.1\HomeworkExcercieses.exe
+D:\KursC#\HomeworkExcercieses\bin\Debug\netcoreapp3.1\HomeworkExcercieses.deps.json
+D:\KursC#\HomeworkExcercieses\bin\Debug\netcoreapp3.1\HomeworkExcercieses.runtimeconfig.json
+D:\KursC#\HomeworkExcercieses\bin\Debug\netcoreapp3.1\HomeworkExcercieses.runtimeconfig.dev.json
+D:\KursC#\HomeworkExcercieses\bin\Debug\netcoreapp3.1\HomeworkExcercieses.dll
+D:\KursC#\HomeworkExcercieses\bin\Debug\netcoreapp3.1\HomeworkExcercieses.pdb
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.csproj.AssemblyReference.cache
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.GeneratedMSBuildEditorConfig.editorconfig
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.AssemblyInfoInputs.cache
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.AssemblyInfo.cs
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.csproj.CoreCompileInputs.cache
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.dll
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.pdb
+D:\KursC#\HomeworkExcercieses\obj\Debug\netcoreapp3.1\HomeworkExcercieses.genruntimeconfig.cache
