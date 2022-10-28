@@ -1,9 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
-namespace Homework4
+// Napisz program, który poprosi użytkownika o podanie liczby.
+// Następnie oblicz wartość rabatu wg następującej reguły:
+// Jeżeli liczba jest większa od 300 to rabat ma wynosić 10%.
+// Jeżeli liczba jest większa od 200 to rabat ma wynosić 15%.
+// Jeżeli liczba jest mniejsza niż 200 to rabat ma wynosić 20%.
+// Dodaj enum UserType z dwoma wartościami – Standard, Premium.
+// Do kodu z poprzedniego punktu dopisz kod, który przypisze
+// do zmiennej typ użytkownika jako Premium jeżeli podana przez
+// użytkownika liczba po odjęciu rabatu (podana_liczba - wartosc_rabatu)
+// jest większa niż 400. W przeciwnym razie przypisz wartość Standard.
+// Następnie wypisz na ekranie tekst zależnie od ustawionego przed chwilą typu.
+// Jeżeli jest to Standard wypisz „Użytkowniku, dziękujemy za zakupy”.
+// Jeżeli jest to Premium to wypisz „Użytkowniku! Serdecznie dziękujemy za zakupy!”.
+
+namespace HomeworkExcercieses.IfStatements
 {
     public class User
     {
@@ -15,7 +27,7 @@ namespace Homework4
         {
             Name = "Jarek";
             Money = money;
-            printInfoAboutUser();
+            PrintInfoAboutUser();
         }
 
         public User() { }
@@ -51,6 +63,7 @@ namespace Homework4
             Console.WriteLine($"Thank you for your money {Name} {userType}");
         }
     }
+
     public enum UserType
     {
         Premium,
