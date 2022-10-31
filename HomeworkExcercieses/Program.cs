@@ -3,6 +3,7 @@ using HomeworkExcercieses.IfStatements;
 using HomeworkExcercieses.ListsAndLoops;
 using HomeworkExcercieses.Namespaces.Namespace1;
 using HomeworkExcercieses.Namespaces.Namespace1.Other;
+using HomeworkExcercieses.Strings;
 using HomeworkExcercieses.UserInteraction;
 using System;
 
@@ -67,8 +68,11 @@ namespace HomeworkExcercieses
 
         static void Homework6() 
         {
-
+            string str = "very long longlong longlong longlong. Really longlong longlong longlong longlong long string";
+            ClassWithStrings classWithStrings = new ClassWithStrings();
+            Console.WriteLine(classWithStrings.DealWithString(str));
         }
+
         static void Main(string[] args)
         {
             //Homework1();
@@ -79,7 +83,9 @@ namespace HomeworkExcercieses
 
             //Homework4();
 
-            Homework5();
+            //Homework5();
+
+            //Homework6();
         }
     }
 }
