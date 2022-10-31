@@ -64,6 +64,11 @@ namespace HomeworkExcercieses
             ListAndLoop listAndLoop = new ListAndLoop();
             listAndLoop.ListNumbersGreaterThenHunderd();
         }
+
+        static void Homework6() 
+        {
+
+        }
         static void Main(string[] args)
         {
             //Homework1();
@@ -75,9 +80,6 @@ namespace HomeworkExcercieses
             //Homework4();
 
             Homework5();
-
-
-
         }
     }
 }
