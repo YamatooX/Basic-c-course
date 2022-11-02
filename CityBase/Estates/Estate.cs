@@ -26,7 +26,8 @@ namespace CityBase.Estates
             _width = width;
             _length = length;
             _price = price;
-            _area = Area;
+            _area = _length * _width;
+            _pricePerMeter = _price / _area;
         }
 
         public Estate(string address, double width, double length, double price)
@@ -36,6 +37,8 @@ namespace CityBase.Estates
             _width = width;
             _length = length;
             _price = price;
+            _area = _length * _width;
+            _pricePerMeter = _price / _area;
         }
 
         public string Address
@@ -104,10 +107,6 @@ namespace CityBase.Estates
             {
                 return _area;
             }
-            set
-            {
-                _area = _length * _width;
-            }
         }
 
         public double PricePerMeter
@@ -115,10 +114,6 @@ namespace CityBase.Estates
             get
             {
                 return _pricePerMeter;
-            }
-            set
-            {
-                _pricePerMeter = _price / _area;
             }
         }
 
