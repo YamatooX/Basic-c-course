@@ -14,10 +14,10 @@ using System.Text;
 
 namespace CityBase
 {
-    class CityManager
+    public class CityManager
     {
-        private static List<Estate> _estates;
-        public static List<Estate> Estates
+        private List<Estate> _estates;
+        public List<Estate> Estates
         {
             get
             {
@@ -32,27 +32,27 @@ namespace CityBase
 
         public void AddEstate(Estate estate)
         {
-            //int id;
-            //if (_estates.Count == 0)
-            //{
-            //    id = 1;
-            //}
-            //else
-            //{
-            //    id = _estates.Count;
-            //}
-
-            //if (estate.Id == 0)
-            //{
-            //    _estates.Add(new Estate(id, estate.Address, estate.Width, estate.Length, estate.Price));
-            //    return;
-            //}
-
-            foreach (Estate e in _estates)
+            int id;
+            if (_estates.Count == 0)
             {
-                if (e.Id == estate.Id)
+                id = 1;
+            }
+            else
+            {
+                id = _estates.Count + 1;
+            }
+
+            if (estate.Id == 0)
+            {
+                _estates.Add(new Estate(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price));
+                return;
+            }
+
+            for(int i = 0; i < _estates.Count; i++)
+            {
+                if (_estates[i].Id == estate.Id)
                 {
-                    _estates.Remove(e);
+                    _estates.Remove(_estates[i]);
                 }
             }
             _estates.Add(estate);

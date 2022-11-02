@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CityBase.Utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,7 +10,7 @@ using System.Text;
 
 namespace CityBase.Estates
 {
-    class Estate
+    public class Estate
     {
         private string _address;
         private int _id;
@@ -18,11 +19,13 @@ namespace CityBase.Estates
         private double _price;
         private double _area;
         private double _pricePerMeter;
+        private Property _property;
 
-        public Estate(int number, string address, double width, double length, double price)
+        public Estate(int number, string address, Property property, double width, double length, double price)
         {
-            _address = address;
             _id = number;
+            _address = address;
+            _property = property;
             _width = width;
             _length = length;
             _price = price;
@@ -30,10 +33,11 @@ namespace CityBase.Estates
             _pricePerMeter = _price / _area;
         }
 
-        public Estate(string address, double width, double length, double price)
+        public Estate(string address, Property property, double width, double length, double price)
         {
             _id = 0;
             _address = address;
+            _property = property;
             _width = width;
             _length = length;
             _price = price;
@@ -114,6 +118,18 @@ namespace CityBase.Estates
             get
             {
                 return _pricePerMeter;
+            }
+        }
+
+        public Property Property
+        {
+            get
+            {
+                return _property;
+            }
+            set
+            {
+                _property = value;
             }
         }
 

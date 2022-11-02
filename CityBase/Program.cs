@@ -1,4 +1,5 @@
 ﻿using CityBase.Estates;
+using CityBase.Utils;
 using System;
 
 namespace CityBase
@@ -16,13 +17,15 @@ namespace CityBase
 
             for(int i = 0; i < 10; i++)
             {
-                cityManager.AddEstate(new Estate(i, address, width, length, price));
+                cityManager.AddEstate(new Estate(i, address, Property.City,width, length, price));
+                if (i == 3 || i == 1 || i == 7)
+                    EstatePrinter.PrintEstate(cityManager.GetEstate(i));
             }
 
-            foreach(Estate e in CityManager.Estates)
-            {
-                Console.WriteLine(e.ToString());
-            }
+            cityManager.AddEstate(new Estate(3, "Inny adres", Property.Other,width, length, price));
+            cityManager.AddEstate(new Estate( "Innnnnnnny adres", Property.Private, width, length, price));
+
+            EstatePrinter.PrintAllEstates(cityManager.Estates);
         }
     }
 }
