@@ -8,6 +8,11 @@ using System.Text;
 // Dodaj w klasie Estate właściwość, która zwróci pole nieruchomości.
 // Dodaj w klasie Estate właściwość, która zwróci cenę za metr kwadratowy nieruchomości (zakładamy, że długość i szerokość są podane w metrach)
 
+
+// Dodaj w klasie Estate właściwości z datą dodania i datą kontroli
+// Zmień konstruktory klasy Estate i dodaj do nich przyjmowanie daty dodania.
+// W konstruktorze z poprzedniego punktu ustawiaj datę kontroli na: data_dodania + 3 lata.
+
 namespace CityBase.Estates
 {
     public class Estate
@@ -20,8 +25,10 @@ namespace CityBase.Estates
         private double _area;
         private double _pricePerMeter;
         private Property _property;
+        private DateTime _date;
+        private DateTime _controlDate;
 
-        public Estate(int number, string address, Property property, double width, double length, double price)
+        public Estate(int number, string address, Property property, double width, double length, double price, DateTime date)
         {
             _id = number;
             _address = address;
@@ -31,9 +38,11 @@ namespace CityBase.Estates
             _price = price;
             _area = _length * _width;
             _pricePerMeter = _price / _area;
+            _date = date;
+            _controlDate = _date.AddYears(3);
         }
 
-        public Estate(string address, Property property, double width, double length, double price)
+        public Estate(string address, Property property, double width, double length, double price, DateTime date)
         {
             _id = 0;
             _address = address;
@@ -43,6 +52,13 @@ namespace CityBase.Estates
             _price = price;
             _area = _length * _width;
             _pricePerMeter = _price / _area;
+            _date = date;
+            _controlDate = _date.AddYears(3);
+        }
+
+        public virtual IEnumerable<string> AdditionalInfo()
+        {
+            return new List<string>();
         }
 
         public string Address
@@ -51,48 +67,28 @@ namespace CityBase.Estates
             {
                 return _address;
             }
-            private set
-            {
-                _address = value;
-            }
         }
-
         public int Id
         {
             get
             {
                 return _id;
             }
-            private set
-            {
-                _id = value;
-            }
         }
-
         public double Width
         {
             get
             {
                 return _width;
             }
-            private set
-            {
-                _width = value;
-            }
         }
-
         public double Length
         {
             get
             {
                 return _length;
             }
-            private set
-            {
-                _length = value;
-            }
         }
-
         public double Price
         {
             get
@@ -104,23 +100,20 @@ namespace CityBase.Estates
                 _price = value;
             }
         }
-
         public double Area
         {
             get
             {
-                return _area;
+                return _width * _length;
             }
         }
-
         public double PricePerMeter
         {
             get
             {
-                return _pricePerMeter;
+                return _price / _area;
             }
         }
-
         public Property Property
         {
             get
@@ -132,10 +125,19 @@ namespace CityBase.Estates
                 _property = value;
             }
         }
-
-        public override string ToString()
+        public DateTime Date
         {
-            return $"{_id}. {_address} {_width} {_length} {_price} {_area} {_pricePerMeter}";
+            get
+            {
+                return _date;
+            }
+        }
+        public DateTime ControlDate
+        {
+            get
+            {
+                return _controlDate;
+            }
         }
     }
 }

@@ -1,0 +1,14 @@
+D:\KursC#\CityBase\bin\Debug\netcoreapp3.1\CityBase.exe
+D:\KursC#\CityBase\bin\Debug\netcoreapp3.1\CityBase.deps.json
+D:\KursC#\CityBase\bin\Debug\netcoreapp3.1\CityBase.runtimeconfig.json
+D:\KursC#\CityBase\bin\Debug\netcoreapp3.1\CityBase.runtimeconfig.dev.json
+D:\KursC#\CityBase\bin\Debug\netcoreapp3.1\CityBase.dll
+D:\KursC#\CityBase\bin\Debug\netcoreapp3.1\CityBase.pdb
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.csproj.AssemblyReference.cache
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.GeneratedMSBuildEditorConfig.editorconfig
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.AssemblyInfoInputs.cache
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.AssemblyInfo.cs
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.csproj.CoreCompileInputs.cache
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.dll
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.pdb
+D:\KursC#\CityBase\obj\Debug\netcoreapp3.1\CityBase.genruntimeconfig.cache

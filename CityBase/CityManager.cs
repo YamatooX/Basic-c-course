@@ -1,6 +1,8 @@
-﻿using CityBase.Estates;
+﻿using CityBase.Data;
+using CityBase.Estates;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 
@@ -16,63 +18,52 @@ namespace CityBase
 {
     public class CityManager
     {
-        private List<Estate> _estates;
-        public List<Estate> Estates
-        {
-            get
-            {
-                return _estates;
-            }
-        }
+        private MemoryDataBase _dataBase;    
 
         public CityManager()
         {
-            _estates = new List<Estate>();
+            _dataBase = new MemoryDataBase();
         }
 
         public void AddEstate(Estate estate)
         {
-            int id;
-            if (_estates.Count == 0)
-            {
-                id = 1;
-            }
-            else
-            {
-                id = _estates.Count + 1;
-            }
+            int id = GenerateId();
 
             if (estate.Id == 0)
             {
-                _estates.Add(new Estate(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price));
-                return;
-            }
-
-            for(int i = 0; i < _estates.Count; i++)
-            {
-                if (_estates[i].Id == estate.Id)
+                if (estate is Office)
                 {
-                    _estates.Remove(_estates[i]);
+                    Office office = (Office)estate;
+                    _dataBase.AddEstate(new Office(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price, office.FloorNumber, office.MaxCapacity , DateTime.Now));
+                }
+                if(estate is Parcel)
+                {
+                    Parcel parcel = (Parcel)estate;
+                    _dataBase.AddEstate(new Parcel(id, estate.Address, estate.Property, parcel.Type, estate.Width, estate.Length, estate.Price, DateTime.Now));
                 }
             }
-            _estates.Add(estate);
         }
 
         public IEnumerable<Estate> GetAllEstates()
         {
-            return _estates;
+            return _dataBase.Estates;
+        }
+
+        private int GenerateId()
+        {
+            if (_dataBase.Estates.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return _dataBase.Estates.Count + 1;
+            }
         }
 
         public Estate GetEstate(int id)
         {
-            foreach (Estate estate in _estates)
-            {
-                if(estate.Id == id )
-                {
-                    return estate;
-                }
-            }
-            return null;
+            return _dataBase.Estates.SingleOrDefault(x => x.Id == id);
         }
     }
 }

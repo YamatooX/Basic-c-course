@@ -18,6 +18,10 @@
 //Cena: CENA
 //================
 
+// W funkcji wyświetlającej szczegóły jednej nieruchomości w klasie EstatePrinter dodaj wyświetlanie daty dodania i daty kontroli.
+
+// W klasie EstatePrinter, w metodzie wyświetlającej szczegóły pojedynczej nieruchomości dopisz wyświetlanie wszystkich dodatkowych informacji o nieruchomości korzystając z metody dodanej w poprzednich punktach.
+
 using CityBase.Estates;
 using System.Collections.Generic;
 using System.Text;
@@ -36,7 +40,13 @@ namespace CityBase.Utils
             sb.AppendLine($"Area: {estate.Area}");
             sb.AppendLine($"Price per m2: {estate.PricePerMeter}");
             sb.AppendLine($"Total price: {estate.Price}");
-
+            sb.AppendLine($"Object created: {estate.Date.ToString("dd/MM/yyyy")}");
+            sb.AppendLine($"Control date: {estate.ControlDate.ToString("dd/MM/yyyy")}");
+            
+            foreach(string info in estate.AdditionalInfo())
+            {
+                sb.AppendLine(info);
+            }
             System.Console.WriteLine(sb.ToString());
         }
 

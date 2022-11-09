@@ -10,22 +10,25 @@ namespace CityBase
         {
             CityManager cityManager = new CityManager();
 
-            string address = "Kimononowicza 1234 Wożący Gbur 48-666";
             double length = 18.6;
             double width = 24.1;
             double price = 1889456;
 
-            for(int i = 0; i < 10; i++)
+            cityManager.AddEstate(new Office("Inny adres", Property.Other, width, length, price, 10, 1500, DateTime.Now));
+            cityManager.AddEstate(new Parcel("Innny adres", Property.Private, ParcelType.Agricultural, width, length, price, DateTime.Now));
+            cityManager.AddEstate(new Office("Innnnny adres", Property.Other, width, length, price, 10, 1500, DateTime.Now));
+            cityManager.AddEstate(new Parcel("Innnnnnnny adres", Property.Private, ParcelType.Agricultural, width, length, 14886666666, DateTime.Now));
+            cityManager.AddEstate(new Office("Innnnnnnnnny adres", Property.Other, width, length, price, 10, 1500, DateTime.Now));
+            cityManager.AddEstate(new Parcel("Innnnnnnnnnny adres", Property.Private, ParcelType.Agricultural, width, length, price, DateTime.Now));
+            cityManager.AddEstate(new Office("Innnnnnnnnnnnnny adres", Property.Other, width, length, price, 10, 1500, DateTime.Now));
+            cityManager.AddEstate(new Parcel("Innnnnnnnnnnnnnny adres", Property.Private, ParcelType.Agricultural, width, length, 9000000, DateTime.Now));
+
+            EstatePrinter.PrintAllEstates(cityManager.GetAllEstates());
+
+            foreach(Estate estate in cityManager.GetAllEstates())
             {
-                cityManager.AddEstate(new Estate(i, address, Property.City,width, length, price));
-                if (i == 3 || i == 1 || i == 7)
-                    EstatePrinter.PrintEstate(cityManager.GetEstate(i));
+                EstatePrinter.PrintEstate(estate);
             }
-
-            cityManager.AddEstate(new Estate(3, "Inny adres", Property.Other,width, length, price));
-            cityManager.AddEstate(new Estate( "Innnnnnnny adres", Property.Private, width, length, price));
-
-            EstatePrinter.PrintAllEstates(cityManager.Estates);
         }
     }
 }
