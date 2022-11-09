@@ -7,7 +7,7 @@ using System;
 
 namespace CityBase.Data
 {
-    public class FileDataBase : IDatabase
+    public class FileDataBase : IDataBase
     {
         private List<Estate> _estates;
         private string _path;
@@ -21,11 +21,11 @@ namespace CityBase.Data
         {
             using (StreamReader reader = File.OpenText(_path))
             {
-                // wczytaj do listy do znaku " | "
                 string line;
                 while((line = reader.ReadLine()) != null )
                 {
-                    // Estate => Office lub Parcel
+                    string[] toSplit = line.Split("|");
+                    _estates.Add(HandleToRead(toSplit));
                 }
             }
         }
@@ -39,15 +39,22 @@ namespace CityBase.Data
             }
         }
 
-        private void HandleToRead()
+        private Estate HandleToRead(string[] line)
         {
-            // Podzielić line na tablicę stringów, by odpowiednio dodać do kolekcji
-
+            if (line[3] == "Office")
+            {
+                return ReadOffice(line);
+            }
+            if (line[3] == "Parcel")
+            {
+                return ReadParcel(line);
+            }
+            return null;
         }
 
         private void HandleToWrite()
         {
-            // Podzielić Estate na elementy po znaku " | "
+            // Podzielić Estate na elementy po znaku "|"
 
         }
         private Office ReadOffice(string[] line)
@@ -76,6 +83,21 @@ namespace CityBase.Data
             DateTime addedDate = DateTime.ParseExact(line[7], "dd-MM-yyyy", null);
 
             return new Parcel(number, address, property, type, width, length, price, addedDate);
+        }
+
+        public void AddEstate(Estate estate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveEstate(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Estate> GetAllEstates()
+        {
+            throw new NotImplementedException();
         }
     }
 }
