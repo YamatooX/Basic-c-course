@@ -18,35 +18,46 @@ namespace CityBase
 {
     public class CityManager
     {
-        private MemoryDataBase _dataBase;    
+        private FileDataBase _dataBase;    
 
         public CityManager()
         {
-            _dataBase = new MemoryDataBase();
+            _dataBase = new FileDataBase();
         }
 
         public void AddEstate(Estate estate)
         {
             int id = GenerateId();
 
+            if (ExistsOnList(estate.Id))
+            {
+                _dataBase.RemoveEstate(estate.Id);
+            }
+
             if (estate.Id == 0)
             {
-                if (estate is Office)
                 {
-                    Office office = (Office)estate;
-                    _dataBase.AddEstate(new Office(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price, office.FloorNumber, office.MaxCapacity , DateTime.Now));
-                }
-                if(estate is Parcel)
-                {
-                    Parcel parcel = (Parcel)estate;
-                    _dataBase.AddEstate(new Parcel(id, estate.Address, estate.Property, parcel.Type, estate.Width, estate.Length, estate.Price, DateTime.Now));
+                    if (estate is Office)
+                    {
+                        Office office = (Office)estate;
+                        _dataBase.WriteIntoFile(new Office(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price, office.FloorNumber, office.MaxCapacity, DateTime.Now));
+                    }
+                    if (estate is Parcel)
+                    {
+                        Parcel parcel = (Parcel)estate;
+                        _dataBase.WriteIntoFile(new Parcel(id, estate.Address, estate.Property, parcel.Type, estate.Width, estate.Length, estate.Price, DateTime.Now));
+                    }
                 }
             }
         }
-
         public IEnumerable<Estate> GetAllEstates()
         {
-            return _dataBase.Estates;
+            return _dataBase.GetAllEstates();
+        }
+
+        private bool ExistsOnList(int id)
+        {
+            return _dataBase.GetAllEstates().Any( x => x.Id == id);
         }
 
         private int GenerateId()
@@ -59,11 +70,6 @@ namespace CityBase
             {
                 return _dataBase.Estates.Count + 1;
             }
-        }
-
-        public Estate GetEstate(int id)
-        {
-            return _dataBase.Estates.SingleOrDefault(x => x.Id == id);
         }
     }
 }

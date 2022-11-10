@@ -4,6 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using CityBase.Utils;
 using System;
+using System.Linq;
+using System.Threading.Tasks;
+
+
+// Dodaj klasę FileDatabase implementującą interfejs IDatabase.
+// Niech klasa FileDatabase przechowuje nieruchomości na liście ale podczas dodawania albo usuwania niech aktualizuje plik z listą nieruchomości.
+// Użyj klasy FileDatabase zamiast klasy MemoryDatabase w klasie CityManager.
+// Dodaj konstruktor w klasie FileDatabase, który będzie przyjmował nazwę pliku z listą nieruchomości
+// Dodaj wczytywanie listy nieruchomości z pliku w konstruktorze z poprzedniego punktu
+
+//Skorzystaj z asynchronicznych wersji funkcji do odczytu i zapisu pliku i czekaj na ich zakończenie poprzez słowo await.
 
 namespace CityBase.Data
 {
@@ -11,10 +22,12 @@ namespace CityBase.Data
     {
         private List<Estate> _estates;
         private string _path;
-        public FileDataBase(List<Estate> list)
+
+        public FileDataBase()
         {
-            _estates = list;
+            _estates = new List<Estate>();
             _path = @"D:\KursC#\CityBase\Estates.txt";
+            ReadFromFile();
         }
 
         private void ReadFromFile()
@@ -22,23 +35,13 @@ namespace CityBase.Data
             using (StreamReader reader = File.OpenText(_path))
             {
                 string line;
-                while((line = reader.ReadLine()) != null )
+                while ((line = reader.ReadLine()) != null)
                 {
                     string[] toSplit = line.Split("|");
-                    _estates.Add(HandleToRead(toSplit));
+                    AddEstate(HandleToRead(toSplit));
                 }
             }
         }
-
-        private void WriteIntoFile()
-        {
-            using (StreamWriter writer = new StreamWriter(_path))
-            {
-                // Podzielić Estate na elementy po znaku " | "
-
-            }
-        }
-
         private Estate HandleToRead(string[] line)
         {
             if (line[3] == "Office")
@@ -52,22 +55,40 @@ namespace CityBase.Data
             return null;
         }
 
-        private void HandleToWrite()
+        public void WriteIntoFile(Estate estate)
         {
-            // Podzielić Estate na elementy po znaku "|"
+            using (StreamWriter writer = new StreamWriter(_path, append: true))
+            {
+                string s= "";
+                if (estate is Office)
+                {
+                    Office office = (Office)estate;
+                    s = $"{office.Id}|{office.Address}|{office.Property}|Office|{office.Width}|{office.Length}|{office.Price}|{office.FloorNumber}|{office.MaxCapacity}|{office.Date.ToString("dd-MM-yyyy")}";
+                    //  9|Ul.Kwiatowa 11|City|Office|40|20|2000000|4|100|11-02-2020
 
+                }
+                if (estate is Parcel)
+                {
+                    Parcel parcel = (Parcel)estate;
+                    s = $"{parcel.Id}|{parcel.Address}|{parcel.Property}|Parcel|{parcel.Width}|{parcel.Length}|{parcel.Price}|{parcel.Type}|{parcel.Date.ToString("dd-MM-yyyy")}";
+                    //  10|Ul.Stara 22|Other|Parcel|100|400|10000000|Agricultural|10-10-2019
+                }
+
+                writer.WriteLine(s);
+            }
         }
+
         private Office ReadOffice(string[] line)
         {
             int number = int.Parse(line[0]);
             string address = line[1];
             Property property = Enum.Parse<Property>(line[2]);
-            double length = double.Parse(line[3]);
-            double width = double.Parse(line[4]);
-            double price = double.Parse(line[5]);
-            DateTime addedDate = DateTime.ParseExact(line[6], "dd-MM-yyyy", null);
+            double length = double.Parse(line[4]);
+            double width = double.Parse(line[5]);
+            double price = double.Parse(line[6]);
             int floors = int.Parse(line[7]);
             int maxCapacity = int.Parse(line[8]);
+            DateTime addedDate = DateTime.ParseExact(line[9], "dd-MM-yyyy", null);
 
             return new Office(number, address, property, width, length, price, floors, maxCapacity, addedDate);
         }
@@ -76,28 +97,43 @@ namespace CityBase.Data
             int number = int.Parse(line[0]);
             string address = line[1];
             Property property = Enum.Parse<Property>(line[2]);
-            ParcelType type = Enum.Parse<ParcelType>(line[3]);
             double length = double.Parse(line[4]);
             double width = double.Parse(line[5]);
             double price = double.Parse(line[6]);
-            DateTime addedDate = DateTime.ParseExact(line[7], "dd-MM-yyyy", null);
+            ParcelType type = Enum.Parse<ParcelType>(line[7]);
+            DateTime addedDate = DateTime.ParseExact(line[8], "dd-MM-yyyy", null);
 
             return new Parcel(number, address, property, type, width, length, price, addedDate);
         }
 
         public void AddEstate(Estate estate)
         {
-            throw new NotImplementedException();
+            _estates.Add(estate);
         }
 
         public void RemoveEstate(int id)
         {
-            throw new NotImplementedException();
+            Estate estate = _estates.SingleOrDefault(x => x.Id == id);
+            _estates.Remove(estate);
         }
 
         public IEnumerable<Estate> GetAllEstates()
         {
-            throw new NotImplementedException();
+            return _estates;
+        }
+
+        public Estate GetEstate(int id)
+        {
+            Estate estate = _estates.SingleOrDefault(x => x.Id == id);
+            return estate;
+        }
+
+        public List<Estate> Estates
+        {
+            get
+            {
+                return _estates;
+            }
         }
     }
 }

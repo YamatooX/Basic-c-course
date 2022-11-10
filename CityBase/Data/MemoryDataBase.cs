@@ -31,6 +31,12 @@ namespace CityBase.Data
             _estates.Remove(estate);
         }
 
+        public Estate GetEstate(int id)
+        {
+            Estate estate = _estates.SingleOrDefault(x => x.Id == id);
+            return estate;
+        }
+
         public List<Estate> Estates
         {
             get

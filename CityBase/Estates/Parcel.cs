@@ -31,7 +31,7 @@ namespace CityBase.Estates
         {
             return new List<string>() 
             { 
-                $"Type: {(_type == ParcelType.Agricultural ? "Building" : "Agricultural")}" 
+                $"Type: {(_type == ParcelType.Agricultural ? "Agricultural" : "Building")}" 
             }; 
         }
         public ParcelType Type

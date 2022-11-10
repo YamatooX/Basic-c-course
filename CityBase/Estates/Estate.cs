@@ -60,7 +60,6 @@ namespace CityBase.Estates
         {
             return new List<string>();
         }
-
         public string Address
         {
             get
@@ -130,6 +129,10 @@ namespace CityBase.Estates
             get
             {
                 return _date;
+            }
+            set
+            {
+                _date = value;
             }
         }
         public DateTime ControlDate

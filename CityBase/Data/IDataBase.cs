@@ -8,5 +8,6 @@ namespace CityBase.Data
         void AddEstate(Estate estate);
         void RemoveEstate(int id);
         IEnumerable<Estate> GetAllEstates();
+        Estate GetEstate(int id);
     }
 }
