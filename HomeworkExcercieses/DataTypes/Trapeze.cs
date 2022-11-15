@@ -11,7 +11,7 @@
 
 namespace HomeworkExcercieses.DataTypes
 {
-    class Trapeze
+    public class Trapeze
     {
         private double a;
         private double b;

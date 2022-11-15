@@ -30,8 +30,6 @@ namespace HomeworkExcercieses.IfStatements
             PrintInfoAboutUser();
         }
 
-        public User() { }
-
         public void PrintInfoAboutUser()
         {
             NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;

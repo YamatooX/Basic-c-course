@@ -28,6 +28,15 @@ namespace CityBase.Data
             _estates = new List<Estate>();
             _path = @"D:\KursC#\CityBase\Estates.txt";
             ReadFromFile();
+            Update();
+        }
+
+        private void Update()
+        {
+            foreach(Estate estate in _estates)
+            {
+                WriteIntoFile(estate);
+            }
         }
 
         private void ReadFromFile()
@@ -59,7 +68,7 @@ namespace CityBase.Data
         {
             using (StreamWriter writer = new StreamWriter(_path, append: true))
             {
-                string s= "";
+                string s= string.Empty;
                 if (estate is Office)
                 {
                     Office office = (Office)estate;

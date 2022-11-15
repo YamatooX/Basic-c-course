@@ -23,8 +23,8 @@ namespace HomeworkExcercieses.UserInteraction
             string name = Console.ReadLine();
             if (string.IsNullOrEmpty(name))
             {
-                Console.WriteLine("Do you have any name? Now i call you Dupa then");
-                name = "Dupa";
+                name = "Default";
+                Console.WriteLine($"Do you have any name? Now i call you {name} then");
                 return;
             }
 
@@ -33,7 +33,7 @@ namespace HomeworkExcercieses.UserInteraction
 
             if (string.IsNullOrEmpty(number))
             {
-                Console.WriteLine("No number?");
+                Console.WriteLine("Incorrect number");
                 return;
             }
 
@@ -43,14 +43,15 @@ namespace HomeworkExcercieses.UserInteraction
             if (!int.TryParse(number, out theNumber))
             {
                 Console.WriteLine("Couldn't parse your number");
+                return;
             }
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Drogi użytkowniku {name} { Environment.NewLine }");
-            sb.AppendLine($"Uważasz, że liczba {number} jest właściwa?{ Environment.NewLine }");
-            sb.AppendLine($"Czy {number} ma dla Ciebie takie znaczenie { Environment.NewLine }");
-            sb.AppendLine($"Dziwnie {name}, że wybrana przez Ciebie liczba to {number}{ Environment.NewLine }");
-            sb.AppendLine($"A może podając {number} miałeś na myśli {++theNumber}?{ Environment.NewLine }");
+            sb.AppendLine($"Drogi użytkowniku {name}");
+            sb.AppendLine($"Uważasz, że liczba {number} jest właściwa?");
+            sb.AppendLine($"Czy {number} ma dla Ciebie takie znaczenie?");
+            sb.AppendLine($"Dziwnie {name}, że wybrana przez Ciebie liczba to {number}.");
+            sb.AppendLine($"A może podając {number} miałeś na myśli {++theNumber}?");
             sb.AppendLine($"Jak sądzisz {name}?");
 
             Console.WriteLine(sb.ToString());

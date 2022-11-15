@@ -1,4 +1,5 @@
 ﻿using CityBase.Estates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,7 +29,14 @@ namespace CityBase.Data
         public void RemoveEstate(int id)
         {
             Estate estate = _estates.SingleOrDefault(x => x.Id == id);
-            _estates.Remove(estate);
+            try
+            {
+                _estates.Remove(estate);
+            }
+            catch(NullReferenceException e)
+            {
+                Console.WriteLine("Estate is null!");
+            }
         }
 
         public Estate GetEstate(int id)

@@ -11,6 +11,21 @@ namespace HomeworkExcercieses
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            //Homework1();
+
+            //Homework2();
+
+            //Homework3();
+
+            //Homework4();
+
+            //Homework5();
+
+            //Homework6();
+        }
+
         static double TrapezeArea(float a, float b, float h)
         {
             return ((a + b) * h) / 2;
@@ -71,21 +86,6 @@ namespace HomeworkExcercieses
             string str = "very long longlong longlong longlong. Really longlong longlong longlong longlong long string";
             ClassWithStrings classWithStrings = new ClassWithStrings();
             Console.WriteLine(classWithStrings.DealWithString(str));
-        }
-
-        static void Main(string[] args)
-        {
-            //Homework1();
-
-            //Homework2();
-
-            //Homework3();
-
-            //Homework4();
-
-            //Homework5();
-
-            //Homework6();
         }
     }
 }

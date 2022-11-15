@@ -26,9 +26,9 @@ namespace CityBase
 
             EstatePrinter.PrintAllEstates(cityManager.GetAllEstates());
 
+            cityManager = new CityManager();
             // Dodaje dwa różne rekordy o tym samym id => Naprawić
             // Dodać asynchroniczność - doczytać więcej
-            // Dodać updatowanie pliku
         }
     }
 }

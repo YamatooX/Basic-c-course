@@ -20,9 +20,11 @@
 
 // W funkcji wyświetlającej szczegóły jednej nieruchomości w klasie EstatePrinter dodaj wyświetlanie daty dodania i daty kontroli.
 
-// W klasie EstatePrinter, w metodzie wyświetlającej szczegóły pojedynczej nieruchomości dopisz wyświetlanie wszystkich dodatkowych informacji o nieruchomości korzystając z metody dodanej w poprzednich punktach.
+// W klasie EstatePrinter, w metodzie wyświetlającej szczegóły pojedynczej nieruchomości
+// dopisz wyświetlanie wszystkich dodatkowych informacji o nieruchomości korzystając z metody dodanej w poprzednich punktach.
 
 using CityBase.Estates;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -47,7 +49,7 @@ namespace CityBase.Utils
             {
                 sb.AppendLine(info);
             }
-            System.Console.WriteLine(sb.ToString());
+            Console.WriteLine(sb.ToString());
         }
 
         public static void PrintAllEstates(IEnumerable<Estate> estates)
@@ -62,7 +64,19 @@ namespace CityBase.Utils
                 sb.AppendLine("=======================================================");
             }
 
-            System.Console.WriteLine(sb.ToString());
+            Console.WriteLine(sb.ToString());
+        }
+
+        public void PrintMenu()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("[1] Add new estate");
+            sb.AppendLine("[2] Show estate");
+            sb.AppendLine("[3] Show all estates");
+            sb.AppendLine("[Default] Exit");
+
+            Console.WriteLine(sb.ToString());
         }
     }
 }

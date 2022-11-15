@@ -40,12 +40,12 @@ namespace CityBase
                     if (estate is Office)
                     {
                         Office office = (Office)estate;
-                        _dataBase.WriteIntoFile(new Office(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price, office.FloorNumber, office.MaxCapacity, DateTime.Now));
+                        _dataBase.AddEstate(new Office(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price, office.FloorNumber, office.MaxCapacity, DateTime.Now));
                     }
                     if (estate is Parcel)
                     {
                         Parcel parcel = (Parcel)estate;
-                        _dataBase.WriteIntoFile(new Parcel(id, estate.Address, estate.Property, parcel.Type, estate.Width, estate.Length, estate.Price, DateTime.Now));
+                        _dataBase.AddEstate(new Parcel(id, estate.Address, estate.Property, parcel.Type, estate.Width, estate.Length, estate.Price, DateTime.Now));
                     }
                 }
             }
