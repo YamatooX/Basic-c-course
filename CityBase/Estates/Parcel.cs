@@ -15,7 +15,14 @@ namespace CityBase.Estates
     public class Parcel : Estate
     {
         private ParcelType _type;
-        
+        public ParcelType Type
+        {
+            get
+            {
+                return _type;
+            }
+        }
+
         public Parcel(string address, Property property, ParcelType type, double width, double length, double price, DateTime date) : 
                     base(address, property, width, length, price, date) 
         {
@@ -33,13 +40,6 @@ namespace CityBase.Estates
             { 
                 $"Type: {(_type == ParcelType.Agricultural ? "Agricultural" : "Building")}" 
             }; 
-        }
-        public ParcelType Type
-        {
-            get
-            {
-                return _type;
-            }
         }
     }
 }

@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeworkExcercieses", "Home
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityBase", "..\CityBase\CityBase.csproj", "{F6F5F517-B61E-4A5B-BA2B-1D6AE6C1EB8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "..\AsyncAwait\AsyncAwait.csproj", "{AFACF0C7-9FFA-4291-9D50-65B92E8CBB84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait", "..\AsyncAwait\AsyncAwait.csproj", "{AFACF0C7-9FFA-4291-9D50-65B92E8CBB84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{14EAA0A1-8344-4BA6-B206-8C54F2E74696}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

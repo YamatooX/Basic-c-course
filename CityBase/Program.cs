@@ -18,9 +18,6 @@ namespace CityBase
             cityManager.AddEstate(new Parcel("pl. Legowisko 43/78", Property.Private, ParcelType.Agricultural, width, length, price, DateTime.Now));
 
             EstatePrinter.PrintAllEstates(cityManager.GetAllEstates());
-
-            // Dodaje zeruje Id
-            // Ogarnąć generics
         }
     }
 }

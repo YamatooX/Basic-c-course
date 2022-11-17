@@ -27,39 +27,7 @@ namespace CityBase.Estates
         private Property _property;
         private DateTime _date;
         private DateTime _controlDate;
-
-        public Estate(int number, string address, Property property, double width, double length, double price, DateTime date)
-        {
-            _id = number;
-            _address = address;
-            _property = property;
-            _width = width;
-            _length = length;
-            _price = price;
-            _area = _length * _width;
-            _pricePerMeter = _price / _area;
-            _date = date;
-            _controlDate = _date.AddYears(3);
-        }
-
-        public Estate(string address, Property property, double width, double length, double price, DateTime date)
-        {
-            _id = 0;
-            _address = address;
-            _property = property;
-            _width = width;
-            _length = length;
-            _price = price;
-            _area = _length * _width;
-            _pricePerMeter = _price / _area;
-            _date = date;
-            _controlDate = _date.AddYears(3);
-        }
-
-        public virtual IEnumerable<string> AdditionalInfo()
-        {
-            return new List<string>();
-        }
+        
         public string Address
         {
             get
@@ -141,6 +109,39 @@ namespace CityBase.Estates
             {
                 return _controlDate;
             }
+        }
+
+        public Estate(int number, string address, Property property, double width, double length, double price, DateTime date)
+        {
+            _id = number;
+            _address = address;
+            _property = property;
+            _width = width;
+            _length = length;
+            _price = price;
+            _area = _length * _width;
+            _pricePerMeter = _price / _area;
+            _date = date;
+            _controlDate = _date.AddYears(3);
+        }
+
+        public Estate(string address, Property property, double width, double length, double price, DateTime date)
+        {
+            _id = 0;
+            _address = address;
+            _property = property;
+            _width = width;
+            _length = length;
+            _price = price;
+            _area = _length * _width;
+            _pricePerMeter = _price / _area;
+            _date = date;
+            _controlDate = _date.AddYears(3);
+        }
+
+        public virtual IEnumerable<string> AdditionalInfo()
+        {
+            return new List<string>();
         }
     }
 }

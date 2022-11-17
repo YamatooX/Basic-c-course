@@ -1,11 +1,9 @@
 ﻿using CityBase.Estates;
 using System.IO;
 using System.Collections.Generic;
-using System.Text;
 using CityBase.Utils;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 
 // Dodaj klasę FileDatabase implementującą interfejs IDatabase.
@@ -28,6 +26,34 @@ namespace CityBase.Data
             _dataBase = new List<Estate>();
             _path = @"D:\KursC#\CityBase\Estates.txt";
             ReadFromFile();
+        }
+
+        public void Add(Estate estate)
+        {
+            AddEstate(estate);
+            UpdateFile();
+        }
+
+        public void RemoveEstate(int id)
+        {
+            Estate estate = GetEstate(id);
+            if (estate == null)
+            {
+                return;
+            }
+            _dataBase.Remove(estate);
+            UpdateFile();
+        }
+
+        public Estate GetEstate(int id)
+        {
+            Estate estate = _dataBase.SingleOrDefault(x => x.Id == id);
+            return estate;
+        }
+
+        public IEnumerable<Estate> GetAllEstates()
+        {
+            return _dataBase;
         }
 
         private void ReadFromFile()
@@ -56,7 +82,7 @@ namespace CityBase.Data
             return null;
         }
 
-        public void UpdateFile()
+        private void UpdateFile()
         {
             using (StreamWriter writer = new StreamWriter(_path))
             {
@@ -150,12 +176,6 @@ namespace CityBase.Data
             return new Parcel(id, address, property, type, width, length, price, addedDate);
         }
 
-        public void Add(Estate estate)
-        {
-            AddEstate(estate);
-            UpdateFile();
-        }
-
         private void AddEstate(Estate estate)
         {
             int id = GenerateId();
@@ -191,36 +211,6 @@ namespace CityBase.Data
         private bool ExistsOnList(int id)
         {
             return _dataBase.Any(x => x.Id == id);
-        }
-
-        public void RemoveEstate(int id)
-        {
-            Estate estate = GetEstate(id);
-            if (estate == null)
-            {
-                return;
-            }
-            _dataBase.Remove(estate);
-            UpdateFile();
-        }
-
-        public Estate GetEstate(int id)
-        {
-            Estate estate = _dataBase.SingleOrDefault(x => x.Id == id);
-            return estate;
-        }
-
-        public IEnumerable<Estate> GetAllEstates()
-        {
-            return _dataBase;
-        }
-
-        public List<Estate> DataBase
-        {
-            get
-            {
-                return _dataBase;
-            }
         }
     }
 }
