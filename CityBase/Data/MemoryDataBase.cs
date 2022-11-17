@@ -16,7 +16,7 @@ namespace CityBase.Data
             _estates = new List<Estate>();
         }
 
-        public void AddEstate(Estate estate)
+        public void Add(Estate estate)
         {
             _estates.Add(estate);
         }
@@ -28,15 +28,12 @@ namespace CityBase.Data
 
         public void RemoveEstate(int id)
         {
-            Estate estate = _estates.SingleOrDefault(x => x.Id == id);
-            try
+            Estate estate = GetEstate(id);
+            if(estate == null)
             {
-                _estates.Remove(estate);
+                return;
             }
-            catch(NullReferenceException e)
-            {
-                Console.WriteLine("Estate is null!");
-            }
+            _estates.Remove(estate);
         }
 
         public Estate GetEstate(int id)

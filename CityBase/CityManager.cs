@@ -18,7 +18,7 @@ namespace CityBase
 {
     public class CityManager
     {
-        private FileDataBase _dataBase;    
+        private IDataBase _dataBase;    
 
         public CityManager()
         {
@@ -27,49 +27,12 @@ namespace CityBase
 
         public void AddEstate(Estate estate)
         {
-            int id = GenerateId();
-
-            if (ExistsOnList(estate.Id))
-            {
-                _dataBase.RemoveEstate(estate.Id);
-            }
-
-            if (estate.Id == 0)
-            {
-                {
-                    if (estate is Office)
-                    {
-                        Office office = (Office)estate;
-                        _dataBase.AddEstate(new Office(id, estate.Address, estate.Property, estate.Width, estate.Length, estate.Price, office.FloorNumber, office.MaxCapacity, DateTime.Now));
-                    }
-                    if (estate is Parcel)
-                    {
-                        Parcel parcel = (Parcel)estate;
-                        _dataBase.AddEstate(new Parcel(id, estate.Address, estate.Property, parcel.Type, estate.Width, estate.Length, estate.Price, DateTime.Now));
-                    }
-                }
-            }
+            _dataBase.Add(estate);
         }
+
         public IEnumerable<Estate> GetAllEstates()
-        {
+        { 
             return _dataBase.GetAllEstates();
-        }
-
-        private bool ExistsOnList(int id)
-        {
-            return _dataBase.GetAllEstates().Any( x => x.Id == id);
-        }
-
-        private int GenerateId()
-        {
-            if (_dataBase.Estates.Count == 0)
-            {
-                return 1;
-            }
-            else
-            {
-                return _dataBase.Estates.Count + 1;
-            }
         }
     }
 }

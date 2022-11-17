@@ -1,11 +1,8 @@
-1|Inny adres|Other|Office|24,1|18,6|1889456|10|1500|10-11-2022
-2|pl. Legowisko 43/78|Private|Parcel|24,1|18,6|1889456|Agricultural|10-11-2022
-3|ul. Kijowa 324/5|Other|Office|24,1|18,6|1889456|10|1500|10-11-2022
-2|pl. Legowisko 43/78|Private|Parcel|24,1|18,6|1889456|Agricultural|10-11-2022
-4|ul. Kijowa 324/5|Other|Office|24,1|18,6|1889456|10|1500|10-11-2022
-4|pl. Legowisko 43/78|Private|Parcel|24,1|18,6|1889456|Agricultural|10-11-20221|Inny adres|Other|Office|18,6|24,1|1889456|10|1500|10-11-2022
-2|pl. Legowisko 43/78|Private|Parcel|18,6|24,1|1889456|Agricultural|10-11-2022
-3|ul. Kijowa 324/5|Other|Office|18,6|24,1|1889456|10|1500|10-11-2022
-2|pl. Legowisko 43/78|Private|Parcel|18,6|24,1|1889456|Agricultural|10-11-2022
-4|ul. Kijowa 324/5|Other|Office|18,6|24,1|1889456|10|1500|10-11-2022
-4|pl. Legowisko 43/78|Private|Parcel|18,6|24,1|1889456|Agricultural|10-11-2022
+1|ul. Kijowa 324/5|Other|Office|18,6|24,1|1889456|10|10|17-11-2022
+2|pl. Legowisko 43/78|Private|Parcel|18,6|24,1|1889456|Agricultural|17-11-2022
+3|ul. Kijowa 324/5|Other|Office|24,1|18,6|1889456|10|10|17-11-2022
+4|pl. Legowisko 43/78|Private|Parcel|24,1|18,6|1889456|Agricultural|17-11-2022
+5|ul. Kijowa 324/5|Other|Office|18,6|24,1|1889456|10|10|17-11-2022
+6|pl. Legowisko 43/78|Private|Parcel|18,6|24,1|1889456|Agricultural|17-11-2022
+7|ul. Kijowa 324/5|Other|Office|24,1|18,6|1889456|10|1500|17-11-2022
+8|pl. Legowisko 43/78|Private|Parcel|24,1|18,6|1889456|Agricultural|17-11-2022

@@ -10,13 +10,6 @@ namespace CityBase
         {
             CityManager cityManager = new CityManager();
 
-            EstatePrinter.PrintAllEstates(cityManager.GetAllEstates());
-
-            foreach(Estate estate in cityManager.GetAllEstates())
-            {
-                EstatePrinter.PrintEstate(estate);
-            }
-
             double length = 18.6;
             double width = 24.1;
             double price = 1889456;
@@ -26,9 +19,8 @@ namespace CityBase
 
             EstatePrinter.PrintAllEstates(cityManager.GetAllEstates());
 
-            cityManager = new CityManager();
-            // Dodaje dwa różne rekordy o tym samym id => Naprawić
-            // Dodać asynchroniczność - doczytać więcej
+            // Dodaje zeruje Id
+            // Ogarnąć generics
         }
     }
 }
