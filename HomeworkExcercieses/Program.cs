@@ -5,7 +5,9 @@ using HomeworkExcercieses.Namespaces.Namespace1;
 using HomeworkExcercieses.Namespaces.Namespace1.Other;
 using HomeworkExcercieses.Strings;
 using HomeworkExcercieses.UserInteraction;
+using HomeworkExcercieses.Generics;
 using System;
+using System.Collections.Generic;
 
 namespace HomeworkExcercieses
 {
@@ -13,6 +15,33 @@ namespace HomeworkExcercieses
     {
         static void Main(string[] args)
         {
+            var intObj = new Examples<int>();
+            intObj.Field = 123;
+
+            var stringObj = new Examples<string>();
+            stringObj.Field = "jjk";
+
+            Console.WriteLine(intObj.Field);
+            Console.WriteLine(stringObj.Field);
+
+            List<string> slist = new List<string>() { "2", "3" };
+            List<int> ilist = new List<int>() { 1, 2, 3 };
+
+            List<object> olist = new List<object>();
+
+            foreach(string s in slist)
+            {
+                olist.Add(s);
+            }
+            foreach (int i in ilist)
+            {
+                olist.Add(i);
+            }
+
+            foreach (object o in olist)
+            {
+                Console.WriteLine(o);
+            }
             //Homework1();
 
             //Homework2();

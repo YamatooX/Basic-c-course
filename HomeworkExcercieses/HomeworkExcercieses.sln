@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeworkExcercieses", "Home
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityBase", "..\CityBase\CityBase.csproj", "{F6F5F517-B61E-4A5B-BA2B-1D6AE6C1EB8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait", "..\AsyncAwait\AsyncAwait.csproj", "{AFACF0C7-9FFA-4291-9D50-65B92E8CBB84}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{14EAA0A1-8344-4BA6-B206-8C54F2E74696}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -28,10 +26,6 @@ Global
 		{F6F5F517-B61E-4A5B-BA2B-1D6AE6C1EB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F5F517-B61E-4A5B-BA2B-1D6AE6C1EB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F5F517-B61E-4A5B-BA2B-1D6AE6C1EB8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFACF0C7-9FFA-4291-9D50-65B92E8CBB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFACF0C7-9FFA-4291-9D50-65B92E8CBB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFACF0C7-9FFA-4291-9D50-65B92E8CBB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFACF0C7-9FFA-4291-9D50-65B92E8CBB84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
